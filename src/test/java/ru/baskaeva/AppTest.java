@@ -59,7 +59,7 @@ public class AppTest {
     }
 
     @Test
-    public void test() {
+    public void сollisionSolveTest() {
         Map<String, Integer> map = new MyHashMap<>(2);
 
         map.put("Sun", 1);
