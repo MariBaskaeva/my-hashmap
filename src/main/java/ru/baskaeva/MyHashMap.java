@@ -43,12 +43,10 @@ public class MyHashMap<K, V> implements Map<K, V> {
     @Override
     public V get(Object key) {
         int keyHash = calculateBucket(key);
-        if(buckets[keyHash] != null) {
-            LinkedList<Node<K, V>> bucket = buckets[keyHash];
-            for (Node<K, V> node : bucket) {
-                if(node.getKey().equals(key))
-                    return node.getValue();
-            }
+        LinkedList<Node<K, V>> bucket = buckets[keyHash];
+        for (Node<K, V> node : bucket) {
+            if(node.getKey().equals(key))
+                return node.getValue();
         }
         return null;
     }
